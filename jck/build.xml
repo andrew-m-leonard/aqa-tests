@@ -32,10 +32,10 @@
 		<isset property="isZOS"/>
 	</condition>
 
-	<condition property="openjdk_systemtest_repo" value="${env.ADOPTOPENJDK_SYSTEMTEST_REPO}" else="${git-prefix}://github.com/adoptium/aqa-systemtest.git">
+	<condition property="openjdk_systemtest_repo" value="${env.ADOPTOPENJDK_SYSTEMTEST_REPO}" else="${git-prefix}://github.com/andrew-m-leonard/aqa-systemtest.git">
 		<isset property="env.ADOPTOPENJDK_SYSTEMTEST_REPO"/>
 	</condition>
-	<condition property="openjdk_systemtest_branch" value="${env.ADOPTOPENJDK_SYSTEMTEST_BRANCH}" else="master">
+	<condition property="openjdk_systemtest_branch" value="${env.ADOPTOPENJDK_SYSTEMTEST_BRANCH}" else="timeout">
 		<isset property="env.ADOPTOPENJDK_SYSTEMTEST_BRANCH"/>
 	</condition>
 
