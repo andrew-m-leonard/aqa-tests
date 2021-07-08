@@ -294,6 +294,7 @@
 			<platform>x86-64_mac(_mixed)?</platform>
 			<impl>openj9</impl>
 		</disabled>
+                <platform>x86-64_windows</platform>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
