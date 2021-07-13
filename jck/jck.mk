@@ -44,6 +44,12 @@ ifeq ($(CYGWIN),1)
    export PATH:=$(PERL):$(PATH)
 endif
 
+# If bash available set it as the default SHELL to use
+BASH_BIN=$(shell which bash)
+ifneq ($(BASH_BIN),)
+   $(info Setting SHELL to $(BASH_BIN))
+   export SHELL:=$(BASH_BIN)
+endif
 
 ifndef JCK_VERSION
   ifeq (8, $(JDK_VERSION))
@@ -71,6 +77,7 @@ endif
 SYSTEMTEST_RESROOT=$(TEST_RESROOT)/../../system
 
 define JCK_CMD_TEMPLATE
+echo "SHELL is $(SHELL)" && \
 perl $(TEST_RESROOT)$(D)..$(D)..$(D)system$(D)stf$(D)stf.core$(D)scripts$(D)stf.pl \
 	-test-root=$(Q)$(TEST_RESROOT)$(D)..$(D)..$(D)system$(D)stf;$(TEST_RESROOT)$(D)..$(D)..$(D)system$(D)aqa-systemtest$(Q) \
 	-systemtest-prereqs=$(Q)$(SYSTEMTEST_RESROOT)$(D)systemtest_prereqs;$(JCK_ROOT)$(Q) \
