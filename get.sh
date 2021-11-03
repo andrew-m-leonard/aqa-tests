@@ -670,9 +670,7 @@ if [ ! -d "$TESTDIR/TKG" ]; then
 	getTestKitGen
 fi
 
-if [[ $JTREG_URL != "" ]]; then
-	getCustomJtreg
-fi
+getCustomJtreg
 
 if [ $CLONE_OPENJ9 != "false" ]; then
 	getFunctionalTestMaterial
