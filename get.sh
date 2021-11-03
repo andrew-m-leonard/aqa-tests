@@ -21,6 +21,7 @@ JVMVERSION=""
 SDK_RESOURCE="nightly"
 CUSTOMIZED_SDK_URL=""
 CUSTOMIZED_SDK_SOURCE_URL=""
+JTREG_URL="https://ci.adoptopenjdk.net/job/dependency_pipeline/lastSuccessfulBuild/artifact/jtreg/jtregtip.tar.gz"
 CLONE_OPENJ9="true"
 OPENJ9_REPO="https://github.com/eclipse-openj9/openj9.git"
 OPENJ9_SHA=""
@@ -145,6 +146,7 @@ parseCommandLineArgs()
 		esac
 	done
 
+        echo "JTREG_URL: $JTREG_URL"
 	echo "TESTDIR: $TESTDIR"
 }
 
