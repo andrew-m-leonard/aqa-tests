@@ -34,7 +34,7 @@
 			<property name="jtregTar" value="jtreg_5_1_b01"/>
 		</then>
 		<else>
-			<property name="jtregTar" value="jtreg_6_1"/>
+			<property name="jtregTar" value="jtreg_6_2"/>
 		</else>
 	</if>
 	<if>
