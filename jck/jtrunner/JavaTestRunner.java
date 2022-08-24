@@ -892,6 +892,7 @@ public class JavaTestRunner {
 
 				List<String> javatestAgentCmd = new ArrayList<>();
 				javatestAgentCmd.add(pathToJava);
+                                javatestAgentCmd.add("-Xmx1024m");
 				javatestAgentCmd.add("-Djavatest.security.allowPropertiesAccess=true");
 				javatestAgentCmd.add("-Djava.security.policy=" + jckPolicyFileFullPath);
 				if (!addModules.equals("")) {
