@@ -1257,7 +1257,7 @@ public class JavaTestRunner {
 						testSpecificJvmOptions = " --add-modules java.xml.bind";
 					}
 				}
-				testSpecificJvmOptions += " -Djdk.attach.allowAttachSelf=true";
+				//testSpecificJvmOptions += " -Djdk.attach.allowAttachSelf=true";
 			}
 		} else {
 			throw new Error("Unexpected jck version : " + jckVersion);
