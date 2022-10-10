@@ -78,8 +78,8 @@ JTREG_BASIC_OPTIONS += -retain:fail,error,*.dmp,javacore.*,heapdump.*,*.trc
 # Ignore tests are not run and completely silent about it
 JTREG_IGNORE_OPTION = -ignore:quiet
 JTREG_BASIC_OPTIONS += $(JTREG_IGNORE_OPTION)
-# Multiple by 8 the timeout numbers, except on zOS use 2
-ifneq ($(OS),OS/390)
+# Multiple by 8 the timeout numbers, except on zOS and AIX use 2
+ifeq ($(filter OS/390 AIX, $(JDK_IMPL)),)
 	JTREG_TIMEOUT_OPTION =  -timeoutFactor:8
 else
 	JTREG_TIMEOUT_OPTION =  -timeoutFactor:2
