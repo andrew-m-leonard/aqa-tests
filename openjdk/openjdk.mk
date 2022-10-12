@@ -82,7 +82,7 @@ JTREG_BASIC_OPTIONS += $(JTREG_IGNORE_OPTION)
 ifeq ($(filter OS/390 AIX, $(OS)),)
 	JTREG_TIMEOUT_OPTION =  -timeoutFactor:8
 else
-	JTREG_TIMEOUT_OPTION =  -timeoutFactor:2
+	JTREG_TIMEOUT_OPTION =  -timeoutFactor:30
 endif
 JTREG_BASIC_OPTIONS += $(JTREG_TIMEOUT_OPTION)
 # Create junit xml
