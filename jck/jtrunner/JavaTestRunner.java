@@ -590,7 +590,7 @@ public class JavaTestRunner {
 				return false; 
 			}
 			
-			fileContent += "concurrency " + "100" + ";\n";
+			fileContent += "concurrency " + "50" + ";\n";
 			fileContent += "timeoutfactor 1" + ";\n";	// 4 base time limit equal 40 minutes
 			fileContent += keyword + ";\n";
 
