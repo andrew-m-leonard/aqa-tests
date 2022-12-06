@@ -590,8 +590,8 @@ public class JavaTestRunner {
 				return false; 
 			}
 			
-			fileContent += "concurrency " + "50" + ";\n";
-			fileContent += "timeoutfactor 0.1" + ";\n";	// 4 base time limit equal 40 minutes
+			fileContent += "concurrency " + "1" + ";\n";
+			fileContent += "timeoutfactor 1" + ";\n";	// 4 base time limit equal 40 minutes
 			fileContent += keyword + ";\n";
 
 			if (platform.equals("win")) {
@@ -774,8 +774,8 @@ public class JavaTestRunner {
 				pathToLib = testJdk + File.separator + "lib";
 			} 
 
-			fileContent += "concurrency " + concurrencyString + ";\n";
-			fileContent += "timeoutfactor 4" + ";\n";							// lang.CLSS,CONV,STMT,INFR requires more than 1h to complete. lang.Annot,EXPR,LMBD require more than 2h to complete tests
+			fileContent += "concurrency " + "1" + ";\n";
+			fileContent += "timeoutfactor 1" + ";\n";							// lang.CLSS,CONV,STMT,INFR requires more than 1h to complete. lang.Annot,EXPR,LMBD require more than 2h to complete tests
 			fileContent += keyword + ";\n";
 
 			String cmdAsStringOrFile = "cmdAsString"; // Whether to reference cmd via cmdAsString or cmdAsFile
