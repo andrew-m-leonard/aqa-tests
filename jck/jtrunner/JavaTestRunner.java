@@ -590,8 +590,8 @@ public class JavaTestRunner {
 				return false; 
 			}
 			
-			fileContent += "concurrency " + "1" + ";\n";
-			fileContent += "timeoutfactor 1" + ";\n";	// 4 base time limit equal 40 minutes
+			fileContent += "concurrency " + "40" + ";\n";
+			fileContent += "timeoutfactor 0.1" + ";\n";	// 4 base time limit equal 40 minutes
 			fileContent += keyword + ";\n";
 
 			if (platform.equals("win")) {
