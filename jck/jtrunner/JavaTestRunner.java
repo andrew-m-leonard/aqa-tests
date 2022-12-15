@@ -989,10 +989,14 @@ public class JavaTestRunner {
 			boolean endedWithinTimeLimit = false;
 			
 			// Use the presence of more than one '/' to signify that we are running a smaller subset of tests.
-			// If one of the highest level subsets of tests is being run it is likely to take a long time.
-			if ( tests.chars().filter(c -> c == '/').count() > 1 && !isRiscv ) {
+			// If one of the high level subsets of tests is being run it is likely to take a long time.
+                        //   api/xxx/yyy/zzz(/or more) : 4 hours
+                        //   api/xxx/yyy               : 8 hours
+			if ( tests.chars().filter(c -> c == '/').count() > 2 && !isRiscv ) {
 				timeout = 4;
-			}
+			} else if ( tests.chars().filter(c -> c == '/').count() > 1 && !isRiscv ) {
+                                timeout = 8;
+                        }
 
 			File f = new File (javatestJarFullPath); 
 			f.setReadable(true); 
