@@ -591,7 +591,7 @@ public class JavaTestRunner {
 			}
 			
 			fileContent += "concurrency " + concurrencyString + ";\n";
-			fileContent += "timeoutfactor 4" + ";\n";	// 4 base time limit equal 40 minutes
+			fileContent += "timeoutfactor 0.1 " + ";\n";	// 4 base time limit equal 40 minutes
 			fileContent += keyword + ";\n";
 
 			if (platform.equals("win")) {
@@ -984,14 +984,14 @@ public class JavaTestRunner {
 				}
 			}
 
-			long timeout = 24;
+			long timeout = 96;
 			int jckRC = -1;
 			boolean endedWithinTimeLimit = false;
 			
 			// Use the presence of more than one '/' to signify that we are running a smaller subset of tests.
 			// If one of the highest level subsets of tests is being run it is likely to take a long time.
 			if ( tests.chars().filter(c -> c == '/').count() > 1 && !isRiscv ) {
-				timeout = 4;
+				timeout = 96;
 			}
 
 			File f = new File (javatestJarFullPath); 
