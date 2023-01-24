@@ -753,7 +753,7 @@ public class JavaTestRunner {
 			extraJvmOptions += suppressOutOfMemoryDumpOptions;
 
 			if (getJckVersionInt(jckVersionNo) > 11) {
-				extraJvmOptions += " --enable-preview -Xfuture ";
+				extraJvmOptions += " -Xfuture ";
 			}
 
 			// Add the JVM options supplied by the user plus those added in this method to the jtb file option.
@@ -809,7 +809,7 @@ public class JavaTestRunner {
 			} else if (jckVersion.contains("jck11")) {
 				fileContent += "set jck.env.compiler.testCompile.otherOpts \"-source 11 \"" + ";\n";
 			} else { // This is the case where JCK Version > 11
-				fileContent += "set jck.env.compiler.testCompile.otherOpts \"-source " + jckVersionNo + " --enable-preview\"" + ";\n";
+				fileContent += "set jck.env.compiler.testCompile.otherOpts \"-source " + jckVersionNo + " \"" + ";\n";
 			} 
 
 			if (tests.contains("api/java_rmi") || tests.equals("api")) {
@@ -828,7 +828,7 @@ public class JavaTestRunner {
 			extraJvmOptions += suppressOutOfMemoryDumpOptions;
 
 			if (getJckVersionInt(jckVersionNo) > 11) {
-				extraJvmOptions += " --enable-preview -Xfuture ";
+				extraJvmOptions += " -Xfuture ";
 			}
 
 			// Add the JVM options supplied by the user plus those added in this method to the jtb file option.
