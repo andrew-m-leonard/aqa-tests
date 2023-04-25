@@ -828,7 +828,7 @@ public class JavaTestRunner {
 			} else if (jckVersion.contains("jck11")) {
 				fileContent += "set jck.env.compiler.testCompile.otherOpts \"-source 11 \"" + ";\n";
 			} else { // This is the case where JCK Version > 11
-				fileContent += "set jck.env.compiler.testCompile.otherOpts \"-source " + jckVersionNo + " --enable-preview\"" + ";\n";
+				fileContent += "set jck.env.compiler.testCompile.otherOpts \"-Xmx2g -source " + jckVersionNo + " --enable-preview\"" + ";\n";
 			} 
 
 			if (tests.contains("api/java_rmi") || tests.equals("api")) {
@@ -851,7 +851,7 @@ public class JavaTestRunner {
 			}
 
 			// Add the JVM options supplied by the user plus those added in this method to the jtb file option.
-			fileContent += "set jck.env.compiler.compRefExecute.otherOpts \" " + extraJvmOptions + " \"" + ";\n";	
+			fileContent += "set jck.env.compiler.compRefExecute.otherOpts \" -Xmx2g " + extraJvmOptions + " \"" + ";\n";	
 		}
 		// Devtools settings
 		if (testSuite.equals("DEVTOOLS")) {
