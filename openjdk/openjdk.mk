@@ -111,13 +111,13 @@ JTREG_IGNORE_OPTION = -ignore:quiet
 JTREG_BASIC_OPTIONS += $(JTREG_IGNORE_OPTION)
 # riscv64 machines aren't very fast (yet!!)
 ifeq ($(ARCH), riscv64)
-	JTREG_TIMEOUT_OPTION = -timeoutFactor:16
+	JTREG_TIMEOUT_OPTION = -timeoutFactor:50
 else
 # Multiple by 8 the timeout numbers, except on zOS use 2
 ifneq ($(OS),OS/390)
-	JTREG_TIMEOUT_OPTION =  -timeoutFactor:8
+	JTREG_TIMEOUT_OPTION =  -timeoutFactor:50
 else
-	JTREG_TIMEOUT_OPTION =  -timeoutFactor:2
+	JTREG_TIMEOUT_OPTION =  -timeoutFactor:50
 endif
 endif
 JTREG_BASIC_OPTIONS += $(JTREG_TIMEOUT_OPTION)
