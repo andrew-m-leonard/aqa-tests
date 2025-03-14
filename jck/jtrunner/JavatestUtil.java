@@ -634,15 +634,15 @@ public class JavatestUtil {
 				fileContent += "set jck.env.runtime.url.fileURL " + fileUrl + ";\n";
 			}
 			
-			if ( tests.contains("api/java_net") || tests.contains("api/org_omg") || tests.contains("api/javax_management") || tests.contains("api/javax_xml") || tests.contains("vm/jdwp") || tests.equals("api")) {
-				if ( !tests.contains("api/javax_xml/bind") &&
-						!tests.contains("api/javax_xml/soap") &&
-						!tests.contains("api/org_omg/PortableInterceptor") &&
-						!tests.contains("api/org_omg/PortableServer") ) {
-					fileContent += "set jck.env.runtime.remoteAgent.passiveHost localhost" + ";\n";
-					fileContent += "set jck.env.runtime.remoteAgent.passivePortDefault Yes" + ";\n";
-				}
-			}
+//			if ( tests.contains("api/java_net") || tests.contains("api/org_omg") || tests.contains("api/javax_management") || tests.contains("api/javax_xml") || tests.contains("vm/jdwp") || tests.equals("api")) {
+//				if ( !tests.contains("api/javax_xml/bind") &&
+//						!tests.contains("api/javax_xml/soap") &&
+//						!tests.contains("api/org_omg/PortableInterceptor") &&
+//						!tests.contains("api/org_omg/PortableServer") ) {
+//					fileContent += "set jck.env.runtime.remoteAgent.passiveHost localhost" + ";\n";
+//					fileContent += "set jck.env.runtime.remoteAgent.passivePortDefault Yes" + ";\n";
+//				}
+//			}
 			
 			// Without the following override the following failures occur:
 			// Fatal Error: file:/jck/jck8b/JCK-runtime-8b/tests/api/javax_xml/xmlCore/w3c/ibm/valid/P85/ibm85v01.xml(6,3384): JAXP00010005: The length of entity "[xml]" is "3,381" that exceeds the "1,000" limit set by "FEATURE_SECURE_PROCESSING".
