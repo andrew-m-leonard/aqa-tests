@@ -1,0 +1,25 @@
+#!groovy
+import groovy.transform.Field
+
+def runTest() {
+  def rerunResults = testmethod()
+  currentBuild.result = rerunResults.jobStatus
+}
+
+def testmethod() {
+
+ node (env.SETUP_LABEL) {
+  echo "TEST1"
+
+  def childTestJobParams = [:]
+  def currentStatus = 'SUCCESS';
+
+  echo "done"
+
+  return [jobStatus: currentStatus, jobParams: childTestJobParams]
+ }
+
+}
+
+runTest()
+
