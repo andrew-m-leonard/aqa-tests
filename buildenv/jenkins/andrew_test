@@ -13,8 +13,13 @@ def testmethod() {
 
   def childTestJobParams = [:]
   def currentStatus = 'SUCCESS';
+  try {
 
-  echo "done"
+    echo "done"
+  }
+  finally {
+       cleanWs disableDeferredWipeout: true, deleteDirs: true
+  }
 
   return [jobStatus: currentStatus, jobParams: childTestJobParams]
  }
