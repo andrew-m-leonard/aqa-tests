@@ -77,11 +77,12 @@ java/lang/ProcessBuilder/Basic.java#id0 https://github.com/adoptium/aqa-tests/is
 java/lang/Thread/virtual/stress/PingPong.java#ltq https://github.com/adoptium/aqa-tests/issues/5677 generic-all
 java/lang/Thread/virtual/stress/PingPong.java#sq https://github.com/adoptium/aqa-tests/issues/5677 generic-all
 
-java/lang/Thread/virtual/stress/GetStackTraceALotWhenBlocking.java https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
-java/lang/Thread/virtual/stress/LotsOfContendedMonitorEnter.java https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
-java/lang/Thread/virtual/stress/PingPong.java https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
-java/lang/Thread/virtual/stress/Skynet100kWithMonitors.java https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
-java/lang/Thread/virtual/stress/Skynet.java https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
+java/lang/Thread/virtual/stress/GetStackTraceALotWhenBlocking.java#id0.GetStackTraceALotWhenBlocking_id0 https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
+java/lang/Thread/virtual/stress/LotsOfContendedMonitorEnter.java#LM_LIGHTWEIGHT.LotsOfContendedMonitorEnter_LM_LIGHTWEIGHT https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
+java/lang/Thread/virtual/stress/PingPong.java#ltq.PingPong_ltq https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
+java/lang/Thread/virtual/stress/PingPong.java#sq.PingPong_sq https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
+java/lang/Thread/virtual/stress/Skynet100kWithMonitors.java#id0.Skynet100kWithMonitors_id0 https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
+java/lang/Thread/virtual/stress/Skynet.java#default.Skynet_default https://github.com/adoptium/aqa-tests/issues/6623 windows-aarch64
 
 ############################################################################
 
