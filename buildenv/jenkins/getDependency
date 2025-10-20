@@ -24,7 +24,7 @@ def testBuild() {
 				sh 'git clone https://github.com/adoptium/aqa-systemtest'
 				sh 'git clone https://github.com/adoptium/STF'
 				sh 'ant -f ./aqa-systemtest/openjdk.build/build.xml -Djava.home=${WORKSPACE}/j2sdk-image/jre -Dprereqs_root=${WORKSPACE}/systemtest_prereqs configure'
-				#sh 'ant -f ./aqa-systemtest/openjdk.test.mauve/build.xml -Djava.home=${WORKSPACE}/j2sdk-image/jre -Dprereqs_root=${WORKSPACE}/systemtest_prereqs configure'
+				//sh 'ant -f ./aqa-systemtest/openjdk.test.mauve/build.xml -Djava.home=${WORKSPACE}/j2sdk-image/jre -Dprereqs_root=${WORKSPACE}/systemtest_prereqs configure'
                                 sh 'curl -LJks --output systemtest_prereqs/mauve/mauve.jar "https://github.com/adoptium/aqa-triage-data/raw/refs/heads/main/AQAvit/mauve.jar"'
 				archiveArtifacts '**/systemtest_prereqs/mauve/mauve.jar'
 				archiveArtifacts '**/systemtest_prereqs/junit/junit.jar'
