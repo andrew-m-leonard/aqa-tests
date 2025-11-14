@@ -387,7 +387,7 @@
 		<property name="jck_runtimes_src_dir" value="${JCK_ROOT_USED}/JCK-runtime-${jck_short_version}"/>
 		
 		<echo>start staging jck materials</echo>
-		<antcall target="stage-jck-material" inheritall="true" />
+		<!-- <antcall target="stage-jck-material" inheritall="true" /> -->
 		<echo>start building Javatest Runner and jck natives</echo>
 		<antcall target="dist" inheritall="true" />
 	</target>
