@@ -193,11 +193,11 @@ if [ $SPEC = "linux_ppc-64_le" ]; then
 elif [ $SPEC = "linux_390-64" ]; then
     wget -q https://ci.adoptium.net/job/Build_Arctic_s390x_linux/lastSuccessfulBuild/artifact/upload/arctic-0.8.1.jar
 else
-    echo "Getting https://ci.adoptium.net/job/UploadFile/124/artifact/upload/arctic-0.8.1.jar"
-    wget -q https://ci.adoptium.net/job/UploadFile/124/artifact/upload/arctic-0.8.1.jar
+    echo "Getting https://ci.adoptium.net/job/UploadFile/127/artifact/upload/arctic-0.8.2.jar"
+    wget -q https://ci.adoptium.net/job/UploadFile/127/artifact/upload/arctic-0.8.2.jar
 fi
 
-mv arctic-0.8.1.jar ${LIB_DIR}/arctic.jar
+mv arctic-0.8.2.jar ${LIB_DIR}/arctic.jar
 
 cp $JENKINS_HOME_DIR/jck_run/arctic/$OSNAME/player.properties .
 echo "Player properties line is $PPROP_LINE"
