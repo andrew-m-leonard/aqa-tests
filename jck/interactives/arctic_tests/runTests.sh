@@ -195,9 +195,10 @@ elif [ $SPEC = "linux_390-64" ]; then
 else
     echo "Getting https://ci.adoptium.net/job/UploadFile/128/artifact/upload/arctic-0.8.3.jar"
     wget -q https://ci.adoptium.net/job/UploadFile/128/artifact/upload/arctic-0.8.3.jar
+ls -l arctic-0.8.3.jar
 fi
 
-mv arctic-0.8.2.jar ${LIB_DIR}/arctic.jar
+mv arctic-0.8.3.jar ${LIB_DIR}/arctic.jar
 ls -l ${LIB_DIR}
 
 cp $JENKINS_HOME_DIR/jck_run/arctic/$OSNAME/player.properties .
