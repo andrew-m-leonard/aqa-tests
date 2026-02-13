@@ -193,8 +193,8 @@ if [ $SPEC = "linux_ppc-64_le" ]; then
 elif [ $SPEC = "linux_390-64" ]; then
     wget -q https://ci.adoptium.net/job/Build_Arctic_s390x_linux/lastSuccessfulBuild/artifact/upload/arctic-0.8.1.jar
 else
-    echo "Getting https://ci.adoptium.net/job/UploadFile/133/artifact/upload/arctic-0.8.9.jar"
-    wget -q https://ci.adoptium.net/job/UploadFile/133/artifact/upload/arctic-0.8.9.jar
+    echo "Getting https://ci.adoptium.net/job/UploadFile/134/artifact/upload/arctic-0.8.9.jar"
+    wget -q https://ci.adoptium.net/job/UploadFile/134/artifact/upload/arctic-0.8.9.jar
 ls -l arctic-0.8.9.jar
 fi
 
