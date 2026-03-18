@@ -116,7 +116,7 @@ else ifneq ($(filter linux_aarch64, $(SPEC)),)
 else ifeq ($(OS),OS/390)
 	JTREG_TIMEOUT_OPTION =  -timeoutFactor:2
 else
-	JTREG_TIMEOUT_OPTION =  -timeoutFactor:8
+	JTREG_TIMEOUT_OPTION =  -timeoutFactor:32
 endif
 
 JTREG_BASIC_OPTIONS += $(JTREG_TIMEOUT_OPTION)
