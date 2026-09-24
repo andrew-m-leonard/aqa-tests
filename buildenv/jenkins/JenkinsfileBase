@@ -660,9 +660,25 @@ def getJobProperties() {
 	}
 }
 
+// HACK: The Jenkins SSH plugin (new versions) prepends the MINGW sshagent binary to PATH on
+// Windows agents, which breaks Cygwin ssh clones.  Until the plugin is downgraded, force
+// Cygwin's /usr/bin ahead of PATH inside every sshagent() block on Windows so that the
+// Cygwin ssh binary wins the PATH lookup.
+def withCygwinSshPath(Closure body) {
+	if (PLATFORM.contains("windows")) {
+		withEnv(["PATH=/usr/bin:${env.PATH}"]) {
+			body()
+		}
+	} else {
+		body()
+	}
+}
+
 def get_sources_with_authentication() {
 	sshagent(credentials:["${params.USER_CREDENTIALS_ID}"], ignoreMissing: true) {
-		get_sources()
+		withCygwinSshPath {
+			get_sources()
+		}
 	}
 }
 
@@ -691,7 +707,9 @@ def makeCompileTest(){
 		dir('aqa-tests') {
 			if (!env.SPEC.startsWith('zos')) {
 				sshagent (credentials: ["$params.SSH_AGENT_CREDENTIAL"], ignoreMissing: true) {
-					sh "$makeTestCmd";
+					withCygwinSshPath {
+						sh "$makeTestCmd"
+					}
 				}
 			} else {
 				sh "$makeTestCmd";
@@ -855,7 +873,9 @@ def runTest( ) {
 
 					echo "env.DISPLAY is ${env.DISPLAY}"
 					sshagent (credentials: ["$params.SSH_AGENT_CREDENTIAL"], ignoreMissing: true) {
-						makeTest("${RUNTEST_CMD}")
+						withCygwinSshPath {
+							makeTest("${RUNTEST_CMD}")
+						}
 					}
 				} else {
 					// Add an additional 10 second timeout due to issue: https://github.com/adoptium/temurin-build/issues/2368#issuecomment-756683888
@@ -867,7 +887,9 @@ def runTest( ) {
 						env.DISPLAY = "${DISPLAY}"
 						echo "env.DISPLAY is ${env.DISPLAY}"
 						sshagent (credentials: ["$params.SSH_AGENT_CREDENTIAL"], ignoreMissing: true) {
-							makeTest("${RUNTEST_CMD}")
+							withCygwinSshPath {
+								makeTest("${RUNTEST_CMD}")
+							}
 						}
 					}
 				}
@@ -875,7 +897,9 @@ def runTest( ) {
 				makeTest("${RUNTEST_CMD}")
 			} else {
 				sshagent (credentials: ["$params.SSH_AGENT_CREDENTIAL"], ignoreMissing: true) {
-					makeTest("${RUNTEST_CMD}")
+					withCygwinSshPath {
+						makeTest("${RUNTEST_CMD}")
+					}
 				}
 			}
 
