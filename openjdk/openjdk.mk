@@ -106,6 +106,9 @@ JTREG_BASIC_OPTIONS += -retain:fail,error,*.dmp,javacore.*,heapdump.*,*.trc
 # Ignore tests are not run and completely silent about it
 JTREG_IGNORE_OPTION = -ignore:quiet
 JTREG_BASIC_OPTIONS += $(JTREG_IGNORE_OPTION)
+
+# Only set timeoutFactor if EXTRA_JTREG_OPTIONS does not already contain one
+ifeq ($(findstring -timeoutFactor,$(EXTRA_JTREG_OPTIONS)),)
 # riscv64 machines aren't very fast (yet!!)
 ifeq ($(ARCH), riscv64)
 	JTREG_TIMEOUT_OPTION = -timeoutFactor:16
@@ -120,6 +123,8 @@ else
 endif
 
 JTREG_BASIC_OPTIONS += $(JTREG_TIMEOUT_OPTION)
+endif
+
 # Create junit xml
 JTREG_XML_OPTION = -xml:verify
 JTREG_BASIC_OPTIONS += $(JTREG_XML_OPTION)
