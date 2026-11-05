@@ -90,11 +90,11 @@ timestamps {
         error "No parameters could be parsed from PARAMETERS_JSON"
     }
 
-    // If PIPELINE_DISPLAY_NAME is not supplied, build it from: REMOTE_JOB_NAME : JDK_VERSIONS : PLATFORMS : TARGETS
+    // If PIPELINE_DISPLAY_NAME is not supplied, build it from: REMOTE_JOB_NAME : JDK_VERSIONS : PLATFORMS : TARGET
     // (only including the values that are present)
     def displayName = parsedParams['PIPELINE_DISPLAY_NAME']
     if (!displayName) {
-        displayName = [REMOTE_JOB_NAME, parsedParams['JDK_VERSIONS'], parsedParams['PLATFORMS'], parsedParams['TARGETS']]
+        displayName = [REMOTE_JOB_NAME, parsedParams['JDK_VERSIONS'], parsedParams['PLATFORMS'], parsedParams['TARGET']]
             .findAll { it }.join(' : ')
     }
     currentBuild.setDisplayName("#${currentBuild.number} - ${displayName}")
